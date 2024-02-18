@@ -20,4 +20,5 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {},
+  pluginst: ['jest'],
 };
