@@ -1,6 +1,9 @@
 function capitalize(string) {
-  if (typeof string !== 'string' || string.length < 1) {
+  if (typeof string !== 'string') {
     return;
+  }
+  if (string.length < 1) {
+    return '';
   }
 
   const stringArray = string.split('');

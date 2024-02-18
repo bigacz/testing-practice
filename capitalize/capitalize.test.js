@@ -15,5 +15,5 @@ test('wrong input type', () => {
 test('empty word', () => {
   const word = capitalize('');
 
-  expect(word).toBe(undefined);
+  expect(word).toBe('');
 });
