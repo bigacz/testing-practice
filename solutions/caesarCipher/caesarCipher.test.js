@@ -1,19 +1,25 @@
 import caesarCipher from './caesarCipher';
 
 test('basic words', () => {
-  expect(caesarCipher('hello', 1)).toBe('IFMMP');
-  expect(caesarCipher('fine', 3)).toBe('ILQH');
-  expect(caesarCipher('fine', 5)).toBe('KNSJ');
+  expect(caesarCipher('hello', 1)).toBe('ifmmp');
+  expect(caesarCipher('fine', 3)).toBe('ilqh');
+  expect(caesarCipher('fine', 5)).toBe('knsj');
+});
+
+test('case-sensitivity', () => {
+  expect(caesarCipher('Tom', 44)).toBe('Lge');
+  expect(caesarCipher('AsAdf ASfWq', 5)).toBe('FxFik FXkBv');
+  expect(caesarCipher('Random@Wor d', 12)).toBe('Dmzpay@Iad p');
 });
 
 test('sentences', () => {
-  expect(caesarCipher('I like grass.', 10)).toBe('S VSUO QBKCC.');
-  expect(caesarCipher('Apple, pear, etc.', 15)).toBe('PEEAT, ETPG, TIR.');
-  expect(caesarCipher('"Don Quixote"', 23)).toBe('"ALK NRFULQB"');
+  expect(caesarCipher('i like grass.', 10)).toBe('s vsuo qbkcc.');
+  expect(caesarCipher('apple, pear, etc.', 15)).toBe('peeat, etpg, tir.');
+  expect(caesarCipher('"don quixote"', 23)).toBe('"alk nrfulqb"');
 });
 
 test('non regular shifts', () => {
-  expect(caesarCipher('Sisyphus', -16)).toBe('CSCIZREC');
-  expect(caesarCipher('My name is John.', 223)).toBe('BN CPBT XH YDWC.');
-  expect(caesarCipher('U@f,asdaSca', -54)).toBe('S@D,YQBYQAY');
+  expect(caesarCipher('sisyphus', -16)).toBe('cscizrec');
+  expect(caesarCipher('my name is john.', 223)).toBe('bn cpbt xh ydwc.');
+  expect(caesarCipher('u@f,asdasca', -54)).toBe('s@d,yqbyqay');
 });
