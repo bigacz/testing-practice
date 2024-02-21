@@ -14,11 +14,17 @@ module.exports = {
         sourceType: 'script',
       },
     },
+    {
+      files: ['*.test.js'],
+      env: {
+        jest: true,
+      },
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
-  pluginst: ['jest'],
 };
